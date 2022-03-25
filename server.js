@@ -35,7 +35,7 @@ bot.hears("آية", replysController.ayah);
 bot.on("sticker", errorsController.sticker);
 bot.on("message", errorsController.message);
 
-bot.launch();
+// bot.launch();
 
 // Enable graceful stop
 process.once("SIGINT", () => bot.stop("SIGINT"));
