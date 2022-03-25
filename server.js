@@ -7,22 +7,18 @@ const replysController = require("./controllers/replys");
 const errorsController = require("./controllers/errors");
 
 const { Telegraf } = require("telegraf");
-const app = express();
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
 
-let bot;
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json());
+
 const port = process.env.PORT || 3000;
-bot = new Telegraf(process.env.BOT_TOKEN);
+const bot = new Telegraf(process.env.BOT_TOKEN);
 // if (process.env.NODE_ENV === "production") {
 //   bot = new TelegramBot(process.env.BOT_TOKEN).listen(port);
 //   bot.setWebHook(process.env.HEROKU_URL + process.env.BOT_TOKEN);
 // } else {
 //   bot = new Telegraf(process.env.BOT_TOKEN);
 // }
-
-app.use(bot.webhookCallback(process.env.BOT_TOKEN));
-bot.telegram.setWebhook(process.env.HEROKU_URL + process.env.BOT_TOKEN);
 
 // Commands
 bot.start(commandsController.start);
@@ -37,8 +33,15 @@ bot.on("message", errorsController.message);
 
 // bot.launch();
 
-// Enable graceful stop
-process.once("SIGINT", () => bot.stop("SIGINT"));
-process.once("SIGTERM", () => bot.stop("SIGTERM"));
+// // Enable graceful stop
+// process.once("SIGINT", () => bot.stop("SIGINT"));
+// process.once("SIGTERM", () => bot.stop("SIGTERM"));
 
+bot.telegram.setWebhook(
+  "https://ayah-bot.herokuapp.com/" + process.env.BOT_TOKEN
+);
+
+const app = express();
+app.get("/", (req, res) => res.send("Hello World!"));
+app.use(bot.webhookCallback(process.env.BOT_TOKEN));
 app.listen(port);
