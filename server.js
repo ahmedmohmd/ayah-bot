@@ -12,7 +12,7 @@ const port = process.env.PORT || 3000;
 
 // Commands
 bot.start(commandsController.start);
-bot.help(commandsController.help);
+// bot.help(commandsController.help);
 
 // Replys
 bot.hears("آية", replysController.ayah);
