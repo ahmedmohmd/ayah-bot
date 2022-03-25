@@ -12,11 +12,11 @@ const ayah = async (ctx) => {
     } = await getAyah();
 
     await ctx.reply(ayahText);
-    ctx.reply(surahName);
-    ctx.reply(`أية رقم: ${ayahNumber}`);
-    ctx.reply(`عدد أياتها: ${ayahsNumber}`);
-    ctx.reply(`الجزء: ${juzNumber}`);
-    ctx.reply(`رقم الصفحة: ${pageNumber}`);
+    await ctx.reply(surahName);
+    await ctx.reply(`أية رقم: ${ayahNumber}`);
+    await ctx.reply(`عدد أياتها: ${ayahsNumber}`);
+    await ctx.reply(`الجزء: ${juzNumber}`);
+    await ctx.reply(`رقم الصفحة: ${pageNumber}`);
   } catch (error) {
     ctx.reply("هناك خطأ ما!");
   }
