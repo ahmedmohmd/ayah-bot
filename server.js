@@ -41,8 +41,9 @@ const app = express();
 bot.launch({
   webhook: {
     domain: "https://ayah-bot.herokuapp.com/",
+    port,
   },
 });
 
 app.get("/", (req, res) => res.send("Hello World!"));
-app.listen(port);
+app.listen();
