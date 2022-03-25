@@ -13,6 +13,10 @@ const { Telegraf } = require("telegraf");
 
 const port = process.env.PORT || 3000;
 const bot = new Telegraf(process.env.BOT_TOKEN);
+bot.telegram.setWebhook(
+  "https://ayah-bot.herokuapp.com/" + process.env.BOT_TOKEN
+);
+
 // if (process.env.NODE_ENV === "production") {
 //   bot = new TelegramBot(process.env.BOT_TOKEN).listen(port);
 //   bot.setWebHook(process.env.HEROKU_URL + process.env.BOT_TOKEN);
@@ -36,10 +40,6 @@ bot.on("message", errorsController.message);
 // // Enable graceful stop
 // process.once("SIGINT", () => bot.stop("SIGINT"));
 // process.once("SIGTERM", () => bot.stop("SIGTERM"));
-
-bot.telegram.setWebhook(
-  "https://ayah-bot.herokuapp.com/" + process.env.BOT_TOKEN
-);
 
 const app = express();
 app.use(bot.webhookCallback(process.env.BOT_TOKEN));
