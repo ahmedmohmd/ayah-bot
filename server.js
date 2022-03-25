@@ -1,11 +1,25 @@
 require("dotenv").config();
+const express = require("express");
+const bodyParser = require("body-parser");
 
 const commandsController = require("./controllers/commands");
 const replysController = require("./controllers/replys");
 const errorsController = require("./controllers/errors");
 
 const { Telegraf } = require("telegraf");
-const bot = new Telegraf(process.env.BOT_TOKEN);
+const app = express();
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+let bot;
+const port = process.env.PORT || 3000;
+
+if (process.env.NODE_ENV === "production") {
+  bot = new TelegramBot(process.env.BOT_TOKEN);
+  bot.setWebHook(process.env.HEROKU_URL+process.env.BOT_TOKEN);
+} else {
+  bot = new Telegraf(process.env.BOT_TOKEN);
+}
 
 // Commands
 bot.start(commandsController.start);
