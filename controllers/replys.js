@@ -11,7 +11,7 @@ const ayah = async (ctx) => {
       pageNumber,
     } = await getAyah();
 
-    ctx.reply(ayahText);
+    await ctx.reply(ayahText);
     ctx.reply(surahName);
     ctx.reply(`أية رقم: ${ayahNumber}`);
     ctx.reply(`عدد أياتها: ${ayahsNumber}`);
