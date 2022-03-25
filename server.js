@@ -42,6 +42,6 @@ bot.telegram.setWebhook(
 );
 
 const app = express();
-app.get("/", (req, res) => res.send("Hello World!"));
 app.use(bot.webhookCallback(process.env.BOT_TOKEN));
+app.get("/", (req, res) => res.send("Hello World!"));
 app.listen(port);
