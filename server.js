@@ -12,7 +12,6 @@ const port = process.env.PORT || 3000;
 
 // Commands
 bot.start(commandsController.start);
-// bot.help(commandsController.help);
 
 // Replys
 bot.hears("آية", replysController.ayah);
@@ -23,7 +22,7 @@ bot.on("message", errorsController.message);
 
 bot.launch({
   webhook: {
-    domain: "https://ayah-bot.herokuapp.com/",
+    domain: process.env.APP_URL,
     port,
   },
 });

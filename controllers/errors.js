@@ -6,7 +6,7 @@ const sticker = (ctx) => ctx.telegram.sendMessage(ctx.chat.id, keyboardBtns);
 const message = (ctx) =>
   ctx.telegram.sendMessage(
     ctx.chat.id,
-    "أضغط علي الزر لتحصل علي أية عشوائية",
+    "أضغط علي الزر أو اكتب (آية) لتحصل علي آية عشوائية",
     keyboardBtns
   );
 
