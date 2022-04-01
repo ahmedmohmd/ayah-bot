@@ -1,5 +1,5 @@
 # Ayah Bot
-@random_ayah_bot
+[@random_ayah_bot](https://t.me/random_ayah_bot)
 
 -----
 
