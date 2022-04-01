@@ -1,3 +1,6 @@
+const { Markup } = require("telegraf");
+const keyboardBtns = Markup.keyboard([Markup.button.callback("آية", "آية")]);
+
 const start = async (ctx) => {
   await ctx.reply("(Ayah Bot) أهلا بك في");
   await ctx.telegram.sendMessage(
