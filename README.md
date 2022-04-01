@@ -3,12 +3,12 @@
 
 -----
 
-## Discreption
+# Discreption
 **Ayah Bot** is a Telegram Bot that you can get by it random Ayah from Quran.
 
 -----
 
-## Languages & Technologies
+# Languages & Technologies
 ### Lauages That used in this Web App:
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
@@ -28,5 +28,5 @@
 
 -----
 
-## Web App Screenshot
+# Web App Screenshot
 ![Ayah Bot](https://github.com/ahmedmohmd/ayah-bot/blob/main/app-screenshot.gif?raw=true)
