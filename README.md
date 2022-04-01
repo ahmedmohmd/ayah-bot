@@ -29,4 +29,4 @@
 -----
 
 # Web App Screenshot
-![Ayah Bot](https://github.com/ahmedmohmd/ayah-bot/blob/main/app-screenshot.gif?raw=true)
+<!-- ![Ayah Bot](https://github.com/ahmedmohmd/ayah-bot/blob/main/app-screenshot.gif?raw=true) -->
